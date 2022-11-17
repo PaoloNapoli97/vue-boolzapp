@@ -1,0 +1,58 @@
+/*---------------
+        RESET
+----------------*/
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------
+        LAYOUT
+----------------*/
+
+body{
+    height: 100vh;
+    background-color: #dbdbd4;
+    display: flex;
+    align-items: center;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 84%;
+    left: 0;
+    right: 0;
+    background: blue;
+    z-index:-1;
+    background-color: #009688;
+}
+
+/*---------------
+    COINTAINER
+----------------*/
+
+.ms-boozapp-container{
+    width: 78.13%;
+    background-color: red;
+    height: 94%;
+    margin: auto;
+}
+
+.ms-list-contact{
+    background-color: blue;
+
+}
+
+/*---------------
+    COINTAINER - HEADERS
+----------------*/
+
+.ms-boozapp-header{
+    background-color: #eaeaea;
+    height: 10%;
+}
+
