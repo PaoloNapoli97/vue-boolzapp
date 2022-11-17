@@ -14,6 +14,14 @@ body{
     background-color: var(--ms-popup-color);
 }
 
+.ms-bg-primary-color{
+    background-color: var(--ms-primary-color);
+}
+
+.ms-bg-lightgray-color{
+    background-color: var(--ms-light-gray-color);
+}
+
 /*---------------
     COLOR
 ----------------*/
