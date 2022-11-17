@@ -1,0 +1,19 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
+/*---------------
+    BACKGROUNDS
+----------------*/
+
+.ms-bg-secondary-gray{
+    background-color: var(--ms-secondary-color);
+}
+
+/*---------------
+    COLOR
+----------------*/
+
+.ms-secondary-color{
+    color: var(--ms-gray-color);
+}

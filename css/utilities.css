@@ -1,0 +1,21 @@
+/*-------------------
+    RESET LINK
+--------------------*/
+
+.ms-list-contact a{
+    text-decoration: none;
+}
+
+/*-------------------
+    AVATAR
+--------------------*/
+
+/* .ms-avatar{
+    width: 100px;
+} */
+
+.ms-avatar img{
+    height: 3.75rem;
+    width: 3.75rem;
+    border-radius: 50%;
+}
