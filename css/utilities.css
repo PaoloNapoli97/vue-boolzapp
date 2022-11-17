@@ -20,6 +20,10 @@
     POPUP
 --------------------*/
 
+.nav-contacts{
+    height: calc(100% - 7%);
+}
+
 .ms-bell-notify{
     background-color: white;
     border-radius: 50%;
@@ -66,3 +70,10 @@
     background-color: lightgray;
   }
 
+/*-------------------
+    CONTACTS
+--------------------*/
+
+.contact-list{
+    overflow-y: hidden;
+}
