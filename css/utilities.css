@@ -2,7 +2,7 @@
     RESET LINK
 --------------------*/
 
-.ms-list-contact a{
+.ms-boozap-header a{
     text-decoration: none;
 }
 
@@ -10,12 +10,23 @@
     AVATAR
 --------------------*/
 
-/* .ms-avatar{
-    width: 100px;
-} */
-
 .ms-avatar img{
-    height: 3.75rem;
-    width: 3.75rem;
+    height: 2.75rem;
+    width: 2.75rem;
     border-radius: 50%;
+}
+
+/*-------------------
+    POPUP
+--------------------*/
+
+.ms-bell-notify{
+    background-color: white;
+    border-radius: 50%;
+    width: 3.125rem;
+    height: 3.125rem;
+    color: var(--ms-popup-color);
+}
+.ms-popup-text a{
+    color: rgb(100, 100, 100);
 }

@@ -10,6 +10,10 @@ body{
     background-color: var(--ms-secondary-color);
 }
 
+.ms-bg-popup{
+    background-color: var(--ms-popup-color);
+}
+
 /*---------------
     COLOR
 ----------------*/
