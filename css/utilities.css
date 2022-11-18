@@ -93,6 +93,26 @@
     right: 10px;
 }
 
+/*---------------
+    MESSAGE
+----------------*/
+
+.ms-message-box{
+    padding: 14px 20px;
+    border-radius: 10px;
+    width: 45%;
+}
+
+.ms-sent{
+    margin-left: auto;
+    background-color: var(--ms-sent-color);
+}
+
+.ms-received{
+    background-color: var(--ms-primary-color);
+}
+
+
 /*-------------------
     TYPEBAR
 --------------------*/
