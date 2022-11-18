@@ -18,10 +18,10 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div class="ms-boozapp-container d-flex">
+    <div id="app" class="ms-boozapp-container d-flex">
 
         <!-- Column Main Meesage Box -->
-        <div class="ms-list-contact col-4 flex-shrink-0 h-100">
+        <div class="ms-list-contact col-4 flex-shrink-0 h-100 flex-column">
 
             <header>
 
@@ -29,7 +29,7 @@
 
                     <div class="ms-my-profile d-flex align-items-center">
 
-                        <div class="ms-avatar">
+                        <div class="ms-my-avatar">
                             <img src="img/avatar_io.jpg" alt="">
                         </div>
 
@@ -49,7 +49,7 @@
 
             </header>
 
-            <main class="nav-contacts">
+            <main class="nav-contacts flex-column">
                 <!-- POPUP ENABLE NOTIFICATION -->
                 <div class="popup-receive-notification p-3 ms-bg-popup d-flex align-items-center">
                     <div class="ms-bell-notify d-flex justify-content-center align-items-center fs-5"><i class="fa-solid fa-bell-slash"></i></div>
@@ -59,10 +59,10 @@
                     </div>
                 </div>
 
-                <div class="chats d-flex flex-column ms-bg-primary-color">
+                <div class="chats d-flex flex-column ms-bg-primary-color h100">
 
                     <!-- Searchbar for contacts -->
-                    <div class="w-100 ms-bg-lightgray-color">
+                    <div class="ms-bg-lightgray-color">
                         <div class="ms-contacts-searchbar m-2 ms-secondary-color">
                             <div class="ms-input-icon">
                                 <span><i class="fa-solid fa-magnifying-glass"></i></span>
@@ -71,12 +71,19 @@
                         </div>
                     </div>
 
-                    <div class="contact-list d-flex flex-grow-1">
-                        <div id="app">
-                            <div v-for="(contact, index) in contacts">
-                                <p>{{contact.name}}</p>
-                                <img :src="contact.avatar" alt="">
-                                <small>{{contact.date}}</small>
+                    <div class="contact-list d-flex flex-column flex-grow-1">
+                        <div class="d-flex ms-card-contact" v-for="(contact, index) in contacts" :class="{active: index === 0}">
+                            <div class="ms-avatar">
+                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                            </div>
+                            <div class="ms-contact-info px-3">
+                                {{contact.name}} <br>
+                                <small class="ms-secondary-color">Ultimo messaggio inviato</small>
+                            </div>
+                            
+                            
+                            <div class="d-flex ms-last-message" v-for="(message, index) in contact.messages">
+                                <small v-if="index === contact.messages.length-1">{{message.date.substring(11,16)}}</small>
                             </div>
                         </div>
                     </div>

@@ -10,9 +10,15 @@
     AVATAR
 --------------------*/
 
-.ms-avatar img{
+.ms-my-avatar img{
     height: 2.75rem;
     width: 2.75rem;
+    border-radius: 50%;
+}
+
+.ms-avatar img{
+    height: 3.375rem;
+    width: 3.375rem;
     border-radius: 50%;
 }
 
@@ -21,11 +27,13 @@
 --------------------*/
 
 .nav-contacts{
-    height: calc(100% - 7%);
+    height: calc(100% - 4.375rem);
+    display: flex;
+    /* flex-direction: column; */
 }
 
 .ms-bell-notify{
-    background-color: white;
+    background-color: var(--ms-primary-color);
     border-radius: 50%;
     width: 3.125rem;
     height: 3.125rem;
@@ -60,7 +68,7 @@
 
 .ms-input-icon:after {
     content: '';
-    height: 44px;
+    height: 2.75rem;
     width: 1px;
   
     position: absolute;
@@ -75,5 +83,12 @@
 --------------------*/
 
 .contact-list{
-    overflow-y: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+
+.ms-last-message{
+    font-size: 14px;
+    position: absolute;
+    right: 10px;
 }
