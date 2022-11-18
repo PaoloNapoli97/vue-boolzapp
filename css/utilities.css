@@ -98,9 +98,13 @@
 ----------------*/
 
 .ms-message-box{
-    padding: 14px 20px;
+    padding-top: .625rem;
+    padding-left: 1.25rem;
+    padding-bottom: 1rem;
+    padding-right: 1.875rem;
     border-radius: 10px;
-    width: 45%;
+    min-width: 25%;
+    max-width: 45%;
 }
 
 .ms-sent{

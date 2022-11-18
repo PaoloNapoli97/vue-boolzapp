@@ -74,13 +74,13 @@
 
                     <!-- Contacts List includes: Cantact avatar, name and last message date -->
                     <div class="contact-list d-flex flex-column flex-grow-1">
-                        <div class="d-flex ms-card-contact" v-for="(contact, index) in contacts" :class="{active: index === 0}">
+                        <div class="d-flex ms-card-contact" v-for="(contact, index) in contacts" :class="{active: index === currentContact}">
                             <div class="ms-avatar">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             </div>
                             <div class="ms-contact-info px-3">
                                 {{contact.name}} <br>
-                                <small class="ms-secondary-color">Ultimo messaggio inviato</small>
+                                <small class="ms-secondary-color" v-for="(content in contact.messages">{{content.message}}</small>
                             </div>
                             
                             <!-- Last message date -->
@@ -101,18 +101,15 @@
             <header>
 
                 <div class="ms-boozapp-header ms-bg-secondary-gray d-flex justify-content-between px-2 align-items-center">
-                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                    <!-- DEBUG TOKEN -->
-                    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 
-                    <div class="ms-contact-profile d-flex align-items-center">
-
+                    <div class="ms-contact-profile d-flex align-items-center" v-for="(contact, index) in contacts[currentContact]">
+<!-- 
                         <div class="ms-header-avatar">
-                            <img src="img/avatar_io.jpg" alt="">
-                        </div>
+                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                        </div> -->
                         
                         <div class="ms-contact-profile-name px-2 fs-5">
-                            
+                            {{contact.name}}
                         </div>
 
                     </div>
@@ -129,9 +126,10 @@
 
             <main>
                 <div class="ms-messages-area d-flex flex-column">
-                    <div class="ms-message-box ms-received my-1">1</div>
+                    <div class="ms-message-box ms-received my-1">
+                        <small></small>
+                    </div>
                     <div class="ms-message-box ms-sent my-1">1</div>
-                    <div class="ms-message-box ms-received my-1">1</div>
                 </div>
 
             </main>

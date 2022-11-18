@@ -56,8 +56,17 @@ header{
 ----------------*/
 
 .ms-card-contact{
+    cursor: pointer;
     padding: 10px 30px;
     border-top: solid 1px var(--ms-secondary-color);
+}
+
+.ms-card-contact:hover{
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.ms-card-contact.active{
+    background-color: var(--ms-secondary-color);
 }
 
 /*---------------
