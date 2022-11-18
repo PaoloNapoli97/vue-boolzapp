@@ -92,3 +92,19 @@
     position: absolute;
     right: 10px;
 }
+
+/*-------------------
+    TYPEBAR
+--------------------*/
+
+.ms-chat-input{
+    width: 84%;
+}
+
+.ms-chat-input input[type=text]{
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: .75rem .625rem;
+    border-radius: .375rem;
+}

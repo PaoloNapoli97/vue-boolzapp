@@ -32,7 +32,7 @@ body{
     margin: auto;
 }
 
-.ms-message-main{
+.ms-message-chatbox{
     background-image: url('../img/mine.jpg');
     border-left: solid 2px;
     border-color: var(--ms-gray-bg-color);
@@ -58,4 +58,26 @@ header{
 .ms-card-contact{
     padding: 10px 30px;
     border-top: solid 1px var(--ms-secondary-color);
+}
+
+/*---------------
+    COINTAINER - MAIN
+----------------*/
+
+.ms-message-chatbox main{
+    height: calc(100% - 120px);
+
+}
+
+/*---------------
+    COINTAINER - FOOTER
+----------------*/
+
+footer{
+    height: 3.75rem;
+}
+
+.ms-boozapp-footer{
+    width: 100%;
+    height: 100%;
 }
