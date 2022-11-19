@@ -107,12 +107,12 @@
     max-width: 45%;
 }
 
-.ms-sent{
+.sent{
     margin-left: auto;
     background-color: var(--ms-sent-color);
 }
 
-.ms-received{
+.received{
     background-color: var(--ms-primary-color);
 }
 
