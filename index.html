@@ -109,9 +109,10 @@
                         </div>
                         
                         <div class="ms-contact-profile-name px-2 fs-5">
-                            {{ contacts[currentContact].name }}
-
+                            {{ contacts[currentContact].name }} <br>
+                            <small v-for="message in contacts[currentContact].messages" class="ms-secondary-color ms-last-message-chat">Ultimo accesso avvenuto alle: {{message.date.substring(11,16)}} </small>
                         </div>
+
 
                     </div>
 
@@ -128,8 +129,12 @@
             <main>
                 <div class="ms-messages-area d-flex flex-column">
                     <div v-for="(message, index) in contacts[currentContact].messages" >
-                        <div class="ms-message-box my-1"  v-if="message.status === 'sent'" :class="{ status: sent}">{{message.message}}</div>
-                        <div class="ms-message-box my-1"  v-if="message.status === 'received'">{{message.message}}</div>
+                        <div class="ms-message-box my-1"  v-if="message.status === 'sent'" :class="{ 'sent' : status === sent}">{{message.message}}
+                            <small class="ms-secondary-color ms-message-date">{{message.date.substring(11,16)}}</small>
+                        </div>
+                        <div class="ms-message-box my-1"  v-if="message.status === 'received'" :class="{ 'received' : status === received}">{{message.message}}
+                            <small class="ms-secondary-color ms-message-date"> {{ message.date.substring(11,16 )}}</small>
+                        </div>
                     </div>
                     <div class="ms-message-box my-1"></div>
                 </div>
