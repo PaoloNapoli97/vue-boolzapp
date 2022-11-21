@@ -186,20 +186,28 @@ createApp({
             const newobjMessage = {
                 message: this.newMessage,
                 status: 'sent',
-                date: '10/01/2020 15:50:00',
+                date: moment().format(),
             };
             if (this.newMessage !== ""){
                 this.contacts[this.currentContact].messages.push(newobjMessage)
                 this.newMessage = ''
                 setTimeout(() =>{
+                    axios.get('https://api.chucknorris.io/jokes/random')
+                    .then((response) =>{ 
+                    const chuckMessage = response.data.value;
                     const contactMessage = {
-                        message: 'ok',
+                        message: chuckMessage,
                         status: 'received',
-                        date: '10/01/2020 15:50:00',
+                        date: moment().format(),
                     }
                     this.contacts[this.currentContact].messages.push(contactMessage);
+                })--
+
                 }, 3000)
             }
-        }
+        },
+        deleteMessage(index) {
+            this.contacts[this.currentContact].messages.splice(index, 1)
+        },
     }
 }).mount('#app');
