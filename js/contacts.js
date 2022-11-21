@@ -185,7 +185,8 @@ createApp({
 
             const newobjMessage = {
                 message: this.newMessage,
-                status: 'sent'
+                status: 'sent',
+                date: '10/01/2020 15:50:00',
             };
             if (this.newMessage !== ""){
                 this.contacts[this.currentContact].messages.push(newobjMessage)
@@ -193,7 +194,8 @@ createApp({
                 setTimeout(() =>{
                     const contactMessage = {
                         message: 'ok',
-                        status: 'received'
+                        status: 'received',
+                        date: '10/01/2020 15:50:00',
                     }
                     this.contacts[this.currentContact].messages.push(contactMessage);
                 }, 3000)
