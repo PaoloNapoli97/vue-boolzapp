@@ -3,6 +3,8 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
+            newMessage: '',
+            search: '',
             currentContact: 0,
             contacts: [
                 {
@@ -173,6 +175,31 @@ createApp({
         changeContact(index){
             return this.currentContact = index;
         },
+        searchContact() { 
+            if( this.search == '' ) {
+                return true;
+            }
+            return contact.name.toLowerCase().startsWith(this.search.toLowerCase());
+        },
+        addMessage() {
+
+            const objmessage = {
+                message: this.newMessage,
+                status: 'sent'
+            };
+            if (this.newMessage !== ""){
+                this.contacts[this.currentContact].messages.push(objmessage)
+                this.newMessage = ''
+                setTimeout(() =>{
+                    const contactMessage = {
+                        message: 'ok',
+                        status: 'received'
+                    }
+                    this.contacts[this.currentContact].messages.push(contactMessage);
+                }, 3000)
+            }
+        }
+
     }
 }).mount('#app');
 

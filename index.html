@@ -68,24 +68,28 @@
                             <div class="ms-input-icon">
                                 <span><i class="fa-solid fa-magnifying-glass"></i></span>
                             </div>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                            <input v-model="searchName" type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
 
                     <!-- Contacts List includes: Cantact avatar, name and last message date -->
                     <div class="contact-list d-flex flex-column flex-grow-1">
-                        <div class="d-flex ms-card-contact" v-for="(contact, index) in contacts" :class="{active: index === currentContact}" @click="changeContact(index)">
-                            <div class="ms-avatar">
-                                <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
-                            </div>
-                            <div class="ms-contact-info px-3">
-                                {{contact.name}} <br>
-                                <small class="ms-secondary-color" v-for="content in contact.messages">{{content.message}}</small>
-                            </div>
-                            
-                            <!-- Last message date -->
-                            <div class="d-flex ms-last-message" v-for="(message, index) in contact.messages">
-                                <small class="ms-secondary-color" v-if="index === contact.messages.length-1">{{message.date.substring(11,16)}}</small>
+                        <div v-for="(contact, index) in contacts" :class="{active: index === currentContact}" @click="changeContact(index)">
+                            <div v-if="contact.visible == true" class="d-flex ms-card-contact">
+
+                                <div class="ms-avatar">
+                                    <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                                </div>
+
+                                <div class="ms-contact-info px-3">
+                                    {{contact.name}} <br>
+                                    <small class="ms-secondary-color">{{contact.messages[contact.messages.length-1].message}}</small>
+                                </div>
+                                
+                                <!-- Last message date -->
+                                <div class="d-flex ms-last-message" v-for="(message, index) in contact.messages">
+                                    <small class="ms-secondary-color" v-if="index === contact.messages.length-1">{{message.date.substring(11,16)}}</small>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,7 +114,7 @@
                         
                         <div class="ms-contact-profile-name px-2 fs-5">
                             {{ contacts[currentContact].name }} <br>
-                            <small v-for="message in contacts[currentContact].messages" class="ms-secondary-color ms-last-message-chat">Ultimo accesso avvenuto alle: {{message.date.substring(11,16)}} </small>
+                            <!-- <small class="ms-secondary-color ms-last-message-chat">Ultimo accesso avvenuto alle: {{contacts[currentContact].messsages[contacs[currentContacts].messages.lenght-1].message.date.substring(11,16)}} </small> -->
                         </div>
 
 
@@ -148,9 +152,9 @@
                         <a href="http://"><i class="fa-regular fa-face-smile px-2 fs-4  ms-secondary-color"></i></a>
                     </div>
                     <!-- Text Area -->
-                    <div class="ms-chat-input">
-                        <input type="text" placeholder="Scrivi un messaggio" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
-                    </div>
+                    <form class="ms-chat-input" @submit.prevent="addMessage">
+                        <input v-model="newMessage" type="text" placeholder="Scrivi un messaggio" aria-label="Search" aria-describedby="inputGroup-sizing-sm">
+                    </form>
                     <!-- Send message/Send Audio -->
                     <div class="ms-status-icons">
                         <a href="http://"><i class="fa-solid fa-microphone px-2 fs-4  ms-secondary-color"></i></a>
