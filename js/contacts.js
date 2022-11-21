@@ -175,7 +175,7 @@ createApp({
         changeContact(index){
             return this.currentContact = index;
         },
-        searchContact() { 
+        searchContact(contact) { 
             if( this.search == '' ) {
                 return true;
             }
