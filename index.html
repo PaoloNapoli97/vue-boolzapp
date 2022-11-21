@@ -68,7 +68,7 @@
                             <div class="ms-input-icon">
                                 <span><i class="fa-solid fa-magnifying-glass"></i></span>
                             </div>
-                            <input v-model="searchName" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
                         </div>
                     </div>
 
@@ -133,10 +133,10 @@
             <main>
                 <div class="ms-messages-area d-flex flex-column">
                     <div v-for="(message, index) in contacts[currentContact].messages" >
-                        <div class="ms-message-box my-1"  v-if="message.status === 'sent'" :class="{ 'sent' : status === sent}">{{message.message}}
+                        <div class="ms-message-box my-1"  v-if="message.status === 'sent'" :class="{ 'sent' : message.status === 'sent'}">{{message.message}}
                             <small class="ms-secondary-color ms-message-date">{{message.date.substring(11,16)}}</small>
                         </div>
-                        <div class="ms-message-box my-1"  v-if="message.status === 'received'" :class="{ 'received' : status === received}">{{message.message}}
+                        <div class="ms-message-box my-1"  v-if="message.status === 'received'" :class="{ 'received' : message.status === 'received'}">{{message.message}}
                             <small class="ms-secondary-color ms-message-date"> {{ message.date.substring(11,16 )}}</small>
                         </div>
                     </div>

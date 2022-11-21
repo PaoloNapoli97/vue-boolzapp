@@ -183,12 +183,12 @@ createApp({
         },
         addMessage() {
 
-            const objmessage = {
+            const newobjMessage = {
                 message: this.newMessage,
                 status: 'sent'
             };
             if (this.newMessage !== ""){
-                this.contacts[this.currentContact].messages.push(objmessage)
+                this.contacts[this.currentContact].messages.push(newobjMessage)
                 this.newMessage = ''
                 setTimeout(() =>{
                     const contactMessage = {
@@ -202,5 +202,3 @@ createApp({
 
     }
 }).mount('#app');
-
-
