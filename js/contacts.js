@@ -201,7 +201,7 @@ createApp({
                         date: moment().format(),
                     }
                     this.contacts[this.currentContact].messages.push(contactMessage);
-                })--
+                })
 
                 }, 3000)
             }

@@ -139,7 +139,7 @@
 
             <main>
                 <div class="ms-messages-area d-flex flex-column">
-                    <div v-for="(message, index) in contacts[currentContact].messages" >
+                    <div v-for="(message, index) in contacts[currentContact].messages">
                         
                         <div class="ms-message-box my-1"  v-if="message.status === 'sent'" :class="{ 'sent' : message.status === 'sent'}">{{message.message}}
                             <small class="ms-secondary-color ms-message-date">{{message.date.substring(11,16)}}</small>
